@@ -43,6 +43,22 @@
    - 不具合管理
    - テスト完了基準
 
+4. API定義書
+   @docs/API定義書.md
+   - API概要（ベースURL、認証方式、データ形式）
+   - エンドポイント一覧（全30エンドポイント）
+     - 認証API（ログイン、ログアウト、ユーザー情報取得）
+     - 日報API（CRUD操作）
+     - 訪問記録API（ネストされたリソース）
+     - コメントAPI（ネストされたリソース）
+     - 顧客マスタAPI（CRUD操作）
+     - ユーザーマスタAPI（CRUD操作、管理者のみ）
+   - リクエスト/レスポンス仕様
+   - バリデーションルール
+   - エラーコード定義
+   - セキュリティ仕様
+   - レート制限
+
 ## システムアーキテクチャ
 
 ### データベーステーブル
@@ -53,7 +69,7 @@
 - **visit_records** - 訪問記録
 - **comments** - コメント
 
-詳細は[要件定義.md](要件定義.md)のER図とテーブル定義を参照。
+詳細は[要件定義.md](docs/要件定義.md)のER図とテーブル定義を参照。
 
 ### 主要機能
 
@@ -122,15 +138,17 @@
 
 ### フロントエンド
 
-- React / Next.js
-- TypeScript
-- TailwindCSS または Material-UI
+- フレームワーク: React / Next.js
+- 言語: TypeScript
+- UI コンポーネント: shadcn/ui + TailwindCSS
+- テスト: Vitest
 
 ### バックエンド
 
-- Node.js + Express または Next.js API Routes
-- TypeScript
-- Prisma ORM
+- フレームワーク: Next.js API Routes
+- 言語: TypeScript
+- DB スキーマ定義: Prisma ORM
+- API スキーマ定義: OpenAPI (Zodによる検証)
 
 ### データベース
 
